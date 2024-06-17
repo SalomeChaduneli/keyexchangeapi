@@ -1,0 +1,28 @@
+{% extends 'security/base.html' %}
+
+{% block title %}Channel List{% endblock %}
+
+{% block content %}
+<h2>Channel List</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Sender User</th>
+            <th>Recipient User</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for channel in channels %}
+        <tr>
+            <td>{{ channel.id }}</td>
+            <td>{{ channel.name }}</td>
+            <td>{{ channel.sender_user.username }}</td>
+            <td>{{ channel.recipient_user.username }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
+
